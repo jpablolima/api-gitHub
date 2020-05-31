@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './styled';
 
+
 export default function Repositories(){
   const [repositories, setRepositories] = useState([]);
   
@@ -8,7 +9,7 @@ export default function Repositories(){
    let repositoriesName = localStorage.getItem('repositoriesName');
     repositoriesName = JSON.parse(repositoriesName);
     setRepositories(repositoriesName);
-    localStorage.clear();
+   // localStorage.clear();
 
   }, []);
 
@@ -22,6 +23,7 @@ export default function Repositories(){
             )
           })}
       </S.List>
+      <S.LinkHome to='/'>Home</S.LinkHome>
     </S.Container>
   );
 }
